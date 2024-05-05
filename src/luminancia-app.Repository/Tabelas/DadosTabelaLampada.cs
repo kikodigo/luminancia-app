@@ -1,5 +1,4 @@
 ﻿using luminancia_app.Domain.Data;
-using System.Xml;
 
 namespace luminancia_app.Repository.Tabelas
 {

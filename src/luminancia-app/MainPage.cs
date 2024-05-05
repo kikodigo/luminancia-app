@@ -15,10 +15,10 @@ namespace luminancia_app
 
         private void Btn_Calculate_Click(object sender, EventArgs e)
         {
-           var valoresEmWatts = _luminanciaService.CalculadoraDeWatts(
-                int.Parse(Txt_Altura.Text),
-                int.Parse(Txt_Largura.Text),
-                Cbx_TipoAmbiente.Text);
+            var valoresEmWatts = _luminanciaService.CalculadoraDeWatts(
+                 int.Parse(Txt_Altura.Text),
+                 int.Parse(Txt_Largura.Text),
+                 Cbx_TipoAmbiente.Text);
 
             MessageBox.Show(
                 $"Min Led: {valoresEmWatts.LedWatt[0]} \n" +

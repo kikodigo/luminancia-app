@@ -30,22 +30,22 @@ namespace luminancia_app.Core.Servicos
             var minWattClassica = _dadosTabelaLampada.PegarValorDeWattsClassica(luxMin);
             var maxWattClassica = _dadosTabelaLampada.PegarValorDeWattsClassica(luxMax);
 
-            return new LuminanciaResponse() 
-            {   
+            return new LuminanciaResponse()
+            {
                 LedWatt = new List<int>()
                 {
                     minWattLed,
                     maxWattLed
                 },
-                HalogeneoWatt = new List<int>() 
+                HalogeneoWatt = new List<int>()
                 {
                     minWattHalogeneo,
                     maxWattHalogeneo},
-                ClassicaWatt = new List<int>() 
-                { 
-                    minWattClassica, 
+                ClassicaWatt = new List<int>()
+                {
+                    minWattClassica,
                     maxWattClassica
-                }            
+                }
             };
         }
     }
