@@ -1,10 +1,10 @@
-﻿using luminancia_app.Domain.Tabela;
+﻿using luminancia_app.Domain.Data;
 
 namespace luminancia_app.Repository.Tabelas
 {
     public class DadosTabelaAmbiente
     {
-        public List<Ambiente> TabelaAmbiente = new List<Ambiente>();
+        public List<AmbienteData> TabelaAmbiente = new List<AmbienteData>();
 
         public DadosTabelaAmbiente()
         {
@@ -13,7 +13,7 @@ namespace luminancia_app.Repository.Tabelas
 
         private void ConstruirTabelaAmbiente()
         {
-            TabelaAmbiente.AddRange(new List<Ambiente>()
+            TabelaAmbiente.AddRange(new List<AmbienteData>()
             {
                 new ()
                 {
@@ -76,6 +76,11 @@ namespace luminancia_app.Repository.Tabelas
                     LumensMax = 500
                 }
             });
+        }
+
+        public AmbienteData PegarValorMinimoDeLumens(string tipoAmbiente)
+        {
+            return TabelaAmbiente.FirstOrDefault(x => x.TipoAmbiente == tipoAmbiente);
         }
     }
 }
