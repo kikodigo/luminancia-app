@@ -36,11 +36,14 @@
             Lbl_TipoAmbiente = new Label();
             Btn_Calculate = new Button();
             Lbl_LampLed = new Label();
-            textBox1 = new TextBox();
             Lbl_LampHalogeneo = new Label();
-            textBox2 = new TextBox();
             Lbl_lampClassica = new Label();
-            textBox3 = new TextBox();
+            Txt_MinClass = new TextBox();
+            Txt_MaxClass = new TextBox();
+            Txt_MaxHalo = new TextBox();
+            Txt_MinHalo = new TextBox();
+            Txt_MaxLed = new TextBox();
+            Txt_MinLed = new TextBox();
             SuspendLayout();
             // 
             // Txt_Altura
@@ -107,60 +110,90 @@
             Lbl_LampLed.AutoSize = true;
             Lbl_LampLed.Location = new Point(12, 170);
             Lbl_LampLed.Name = "Lbl_LampLed";
-            Lbl_LampLed.Size = new Size(115, 15);
+            Lbl_LampLed.Size = new Size(227, 15);
             Lbl_LampLed.TabIndex = 8;
-            Lbl_LampLed.Text = "Lampada LED (Watt)";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(12, 188);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(283, 23);
-            textBox1.TabIndex = 7;
+            Lbl_LampLed.Text = "Lampada LED (Min / Max Watts Indicado)";
             // 
             // Lbl_LampHalogeneo
             // 
             Lbl_LampHalogeneo.AutoSize = true;
             Lbl_LampHalogeneo.Location = new Point(12, 214);
             Lbl_LampHalogeneo.Name = "Lbl_LampHalogeneo";
-            Lbl_LampHalogeneo.Size = new Size(153, 15);
+            Lbl_LampHalogeneo.Size = new Size(265, 15);
             Lbl_LampHalogeneo.TabIndex = 10;
-            Lbl_LampHalogeneo.Text = "Lampada Halogéneo (Watt)";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(12, 232);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(283, 23);
-            textBox2.TabIndex = 9;
+            Lbl_LampHalogeneo.Text = "Lampada Halogéneo (Min / Max Watts Indicado)";
             // 
             // Lbl_lampClassica
             // 
             Lbl_lampClassica.AutoSize = true;
             Lbl_lampClassica.Location = new Point(12, 258);
             Lbl_lampClassica.Name = "Lbl_lampClassica";
-            Lbl_lampClassica.Size = new Size(137, 15);
+            Lbl_lampClassica.Size = new Size(249, 15);
             Lbl_lampClassica.TabIndex = 12;
-            Lbl_lampClassica.Text = "Lampada Clássica (Watt)";
+            Lbl_lampClassica.Text = "Lampada Clássica (Min / Max Watts Indicado)";
             // 
-            // textBox3
+            // Txt_MinClass
             // 
-            textBox3.Location = new Point(12, 276);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(283, 23);
-            textBox3.TabIndex = 11;
+            Txt_MinClass.Enabled = false;
+            Txt_MinClass.Location = new Point(12, 276);
+            Txt_MinClass.Name = "Txt_MinClass";
+            Txt_MinClass.Size = new Size(141, 23);
+            Txt_MinClass.TabIndex = 11;
+            // 
+            // Txt_MaxClass
+            // 
+            Txt_MaxClass.Enabled = false;
+            Txt_MaxClass.Location = new Point(157, 276);
+            Txt_MaxClass.Name = "Txt_MaxClass";
+            Txt_MaxClass.Size = new Size(141, 23);
+            Txt_MaxClass.TabIndex = 13;
+            // 
+            // Txt_MaxHalo
+            // 
+            Txt_MaxHalo.Enabled = false;
+            Txt_MaxHalo.Location = new Point(157, 232);
+            Txt_MaxHalo.Name = "Txt_MaxHalo";
+            Txt_MaxHalo.Size = new Size(141, 23);
+            Txt_MaxHalo.TabIndex = 15;
+            // 
+            // Txt_MinHalo
+            // 
+            Txt_MinHalo.Enabled = false;
+            Txt_MinHalo.Location = new Point(12, 232);
+            Txt_MinHalo.Name = "Txt_MinHalo";
+            Txt_MinHalo.Size = new Size(141, 23);
+            Txt_MinHalo.TabIndex = 14;
+            // 
+            // Txt_MaxLed
+            // 
+            Txt_MaxLed.Enabled = false;
+            Txt_MaxLed.Location = new Point(157, 188);
+            Txt_MaxLed.Name = "Txt_MaxLed";
+            Txt_MaxLed.Size = new Size(141, 23);
+            Txt_MaxLed.TabIndex = 17;
+            // 
+            // Txt_MinLed
+            // 
+            Txt_MinLed.Enabled = false;
+            Txt_MinLed.Location = new Point(12, 188);
+            Txt_MinLed.Name = "Txt_MinLed";
+            Txt_MinLed.Size = new Size(141, 23);
+            Txt_MinLed.TabIndex = 16;
             // 
             // MainPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(310, 450);
+            ClientSize = new Size(308, 315);
+            Controls.Add(Txt_MaxLed);
+            Controls.Add(Txt_MinLed);
+            Controls.Add(Txt_MaxHalo);
+            Controls.Add(Txt_MinHalo);
+            Controls.Add(Txt_MaxClass);
             Controls.Add(Lbl_lampClassica);
-            Controls.Add(textBox3);
+            Controls.Add(Txt_MinClass);
             Controls.Add(Lbl_LampHalogeneo);
-            Controls.Add(textBox2);
             Controls.Add(Lbl_LampLed);
-            Controls.Add(textBox1);
             Controls.Add(Btn_Calculate);
             Controls.Add(Lbl_TipoAmbiente);
             Controls.Add(Lbl_Largura);
@@ -184,10 +217,13 @@
         private Label Lbl_TipoAmbiente;
         private Button Btn_Calculate;
         private Label Lbl_LampLed;
-        private TextBox textBox1;
         private Label Lbl_LampHalogeneo;
-        private TextBox textBox2;
         private Label Lbl_lampClassica;
-        private TextBox textBox3;
+        private TextBox Txt_MinClass;
+        private TextBox Txt_MaxClass;
+        private TextBox Txt_MaxHalo;
+        private TextBox Txt_MinHalo;
+        private TextBox Txt_MaxLed;
+        private TextBox Txt_MinLed;
     }
 }

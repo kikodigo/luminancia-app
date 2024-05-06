@@ -1,4 +1,6 @@
 using luminancia_app.Core.Servicos;
+using luminancia_app.Core.Validacoes;
+using luminancia_app.Domain.Response;
 using luminancia_app.Repository.Tabelas;
 
 namespace luminancia_app
@@ -15,18 +17,48 @@ namespace luminancia_app
 
         private void Btn_Calculate_Click(object sender, EventArgs e)
         {
+            var (haserror, error) = ValidacoesDosCampos.ValidarAlturaELargura(Txt_Altura.Text, Txt_Largura.Text);
+
+            if (haserror)
+            {
+                MessageBox.Show($"{error}",
+                    "ERRO",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(Cbx_TipoAmbiente.Text))
+            {
+                MessageBox.Show($"Por favor, selecione um Ambiente a ser calculado",
+                    "Atenção",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
             var valoresEmWatts = _luminanciaService.CalculadoraDeWatts(
                  int.Parse(Txt_Altura.Text),
                  int.Parse(Txt_Largura.Text),
                  Cbx_TipoAmbiente.Text);
 
-            MessageBox.Show(
-                $"Min Led: {valoresEmWatts.LedWatt[0]} \n" +
-                $"Max led: {valoresEmWatts.LedWatt[1]} \n" +
-                $"Min Halo: {valoresEmWatts.HalogeneoWatt[0]} \n" +
-                $"Max Halo:  {valoresEmWatts.HalogeneoWatt[1]} \n" +
-                $"Min Class:  {valoresEmWatts.ClassicaWatt[0]}\n" +
-                $"Max Class:  {valoresEmWatts.ClassicaWatt[1]}");
+            DefinirValoresNasTxtBox(valoresEmWatts);
+        }
+
+        private void DefinirValoresNasTxtBox(LuminanciaResponse valoresEmWatts)
+        {
+            var watts = " Watts";
+
+            Txt_MinLed.Text = valoresEmWatts.LedWatt[0].ToString() + watts;
+            Txt_MaxLed.Text = valoresEmWatts.LedWatt[1].ToString() + watts;
+
+            Txt_MinHalo.Text = valoresEmWatts.HalogeneoWatt[0].ToString() + watts;
+            Txt_MaxHalo.Text = valoresEmWatts.HalogeneoWatt[1].ToString() + watts;
+
+            Txt_MinClass.Text = valoresEmWatts.ClassicaWatt[0].ToString() + watts;
+            Txt_MaxClass.Text = valoresEmWatts.ClassicaWatt[1].ToString() + watts;
         }
 
         private void ConstruirCbx()
