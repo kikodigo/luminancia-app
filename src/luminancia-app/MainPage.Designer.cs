@@ -62,6 +62,7 @@
             // 
             // Cbx_TipoAmbiente
             // 
+            Cbx_TipoAmbiente.DropDownStyle = ComboBoxStyle.DropDownList;
             Cbx_TipoAmbiente.FormattingEnabled = true;
             Cbx_TipoAmbiente.Location = new Point(12, 115);
             Cbx_TipoAmbiente.Name = "Cbx_TipoAmbiente";
