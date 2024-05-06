@@ -17,7 +17,7 @@ namespace luminancia_app
 
         private void Btn_Calculate_Click(object sender, EventArgs e)
         {
-            var (haserror, error) = ValidacoesDosCampos.ValidarAlturaELargura(Txt_Altura.Text, Txt_Largura.Text);
+            var (haserror, error) = ValidacoesDosCampos.ValidarComprimentoELargura(Txt_Comprimento.Text, Txt_Largura.Text);
 
             if (haserror)
             {
@@ -40,7 +40,7 @@ namespace luminancia_app
             }
 
             var valoresEmWatts = _luminanciaService.CalculadoraDeWatts(
-                 int.Parse(Txt_Altura.Text),
+                 int.Parse(Txt_Comprimento.Text),
                  int.Parse(Txt_Largura.Text),
                  Cbx_TipoAmbiente.Text);
 

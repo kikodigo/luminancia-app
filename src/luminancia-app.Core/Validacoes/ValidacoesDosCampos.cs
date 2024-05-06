@@ -2,14 +2,14 @@
 {
     public static class ValidacoesDosCampos
     {
-        public static (bool, string) ValidarAlturaELargura(string altura, string largura)
+        public static (bool, string) ValidarComprimentoELargura(string comprimento, string largura)
         {
             bool hasError = false;
             string error = string.Empty;
 
-            if (!int.TryParse(altura, out _))
+            if (!int.TryParse(comprimento, out _))
             {
-                error = "Altura não é um valor valido";
+                error = "Comprimento não é um valor valido";
                 hasError = true;
             }
 
