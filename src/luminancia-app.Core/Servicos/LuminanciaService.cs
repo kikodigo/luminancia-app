@@ -14,12 +14,12 @@ namespace luminancia_app.Core.Servicos
             _dadosTabelaLampada = new DadosTabelaLampada();
         }
 
-        public LuminanciaResponse CalculadoraDeWatts(int altura, int largura, string tipoAmbiente)
+        public LuminanciaResponse CalculadoraDeWatts(int comprimento, int largura, string tipoAmbiente)
         {
             var dadosAmbiente = _dadosTabelaAmbiente.PegarValorMinimoDeLumens(tipoAmbiente);
 
-            var luxMin = (altura * largura) * dadosAmbiente.LumensMin;
-            var luxMax = (altura * largura) * dadosAmbiente.LumensMax;
+            var luxMin = (comprimento * largura) * dadosAmbiente.LumensMin;
+            var luxMax = (comprimento * largura) * dadosAmbiente.LumensMax;
 
             var minWattLed = _dadosTabelaLampada.PegarValorDeWattsLed(luxMin);
             var maxWattLed = _dadosTabelaLampada.PegarValorDeWattsLed(luxMax);

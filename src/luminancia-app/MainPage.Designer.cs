@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
-            Txt_Altura = new TextBox();
+            Txt_Comprimento = new TextBox();
             Txt_Largura = new TextBox();
             Cbx_TipoAmbiente = new ComboBox();
-            Lbl_Altura = new Label();
+            Lbl_Comprimento = new Label();
             Lbl_Largura = new Label();
             Lbl_TipoAmbiente = new Label();
             Btn_Calculate = new Button();
@@ -47,12 +47,12 @@
             Txt_MinLed = new TextBox();
             SuspendLayout();
             // 
-            // Txt_Altura
+            // Txt_Comprimento
             // 
-            Txt_Altura.Location = new Point(12, 27);
-            Txt_Altura.Name = "Txt_Altura";
-            Txt_Altura.Size = new Size(286, 23);
-            Txt_Altura.TabIndex = 0;
+            Txt_Comprimento.Location = new Point(12, 27);
+            Txt_Comprimento.Name = "Txt_Comprimento";
+            Txt_Comprimento.Size = new Size(286, 23);
+            Txt_Comprimento.TabIndex = 0;
             // 
             // Txt_Largura
             // 
@@ -70,14 +70,14 @@
             Cbx_TipoAmbiente.Size = new Size(286, 23);
             Cbx_TipoAmbiente.TabIndex = 2;
             // 
-            // Lbl_Altura
+            // Lbl_Comprimento
             // 
-            Lbl_Altura.AutoSize = true;
-            Lbl_Altura.Location = new Point(12, 9);
-            Lbl_Altura.Name = "Lbl_Altura";
-            Lbl_Altura.Size = new Size(58, 15);
-            Lbl_Altura.TabIndex = 3;
-            Lbl_Altura.Text = "Altura(m)";
+            Lbl_Comprimento.AutoSize = true;
+            Lbl_Comprimento.Location = new Point(12, 9);
+            Lbl_Comprimento.Name = "Lbl_Comprimento";
+            Lbl_Comprimento.Size = new Size(101, 15);
+            Lbl_Comprimento.TabIndex = 3;
+            Lbl_Comprimento.Text = "Comprimento(m)";
             // 
             // Lbl_Largura
             // 
@@ -199,10 +199,10 @@
             Controls.Add(Btn_Calculate);
             Controls.Add(Lbl_TipoAmbiente);
             Controls.Add(Lbl_Largura);
-            Controls.Add(Lbl_Altura);
+            Controls.Add(Lbl_Comprimento);
             Controls.Add(Cbx_TipoAmbiente);
             Controls.Add(Txt_Largura);
-            Controls.Add(Txt_Altura);
+            Controls.Add(Txt_Comprimento);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainPage";
             Text = "Luminancia App";
@@ -212,10 +212,10 @@
 
         #endregion
 
-        private TextBox Txt_Altura;
+        private TextBox Txt_Comprimento;
         private TextBox Txt_Largura;
         private ComboBox Cbx_TipoAmbiente;
-        private Label Lbl_Altura;
+        private Label Lbl_Comprimento;
         private Label Lbl_Largura;
         private Label Lbl_TipoAmbiente;
         private Button Btn_Calculate;
