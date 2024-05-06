@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             Txt_Altura = new TextBox();
             Txt_Largura = new TextBox();
             Cbx_TipoAmbiente = new ComboBox();
@@ -202,6 +203,7 @@
             Controls.Add(Cbx_TipoAmbiente);
             Controls.Add(Txt_Largura);
             Controls.Add(Txt_Altura);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainPage";
             Text = "Luminancia App";
             ResumeLayout(false);
